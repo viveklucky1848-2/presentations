@@ -1,15 +1,14 @@
 <slide>
 <title>Showing a Map</title>
-<subtitle>Leaflet</subtitle>
 <div effect="fade-out">
-<iframe filename='examples/leaflet.html'/>
+<iframe filename='examples/leaflet.php?lat=:-:lat:-:&amp;lon=:-:lon:-:'/>
 </div>
 <div effect="fade-in">
 <example><![CDATA[
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Leaflet Quick Start Guide Example</title>
+    <title>Leaflet</title>
     <meta charset="utf-8" />
     
     <link rel="stylesheet" href="leaflet/leaflet.css" />
@@ -22,10 +21,10 @@
         var map = new L.Map('map');
         
         var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
-            osmAttrib = 'Map data &copy; 2011 OpenStreetMap contributors',
+            osmAttrib = 'Map data &copy; 2016 OpenStreetMap contributors',
             osm = new L.TileLayer(osmUrl, {maxZoom: 18, attribution: osmAttrib});
         
-        map.setView(new L.LatLng(51.5179, -0.12), 13).addLayer(osm);
+        map.setView(new L.LatLng(:-:lat:-:, :-:lon:-:), 13).addLayer(osm);
     </script>
 </body>
 </html>]]></example>

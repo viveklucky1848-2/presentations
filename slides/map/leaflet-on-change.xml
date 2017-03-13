@@ -1,0 +1,36 @@
+<slide>
+<title>Detecting Change Event</title>
+<div effect="fade-out">
+<iframe filename='examples/leaflet-on-change.php?lat=:-:lat:-:&amp;lon=:-:lon:-:'/>
+</div>
+<div effect="fade-in">
+<example><![CDATA[
+<!DOCTYPE html>
+<html>
+<head>
+    …
+</head>
+<body>
+    <div id="map" style="width: 1004px; height: 590px"></div>
+    <script type="text/javascript">
+        var map = new L.Map('map');
+        
+        var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            osmAttrib = 'Map data &copy; 2016 OpenStreetMap contributors',
+            osm = new L.TileLayer(osmUrl, {maxZoom: 18, attribution: osmAttrib});
+        
+        map.setView(new L.LatLng(:-:lat:-:, :-:lon:-:), 13).addLayer(osm);
+
+        map.on('moveend', changeLocation);
+
+        function changeLocation(event) {
+            center = map.getCenter();
+
+            alert( center.lat + ' - ' + center.lng );
+        }
+
+    </script>
+</body>
+</html>]]></example>
+</div>
+</slide>
